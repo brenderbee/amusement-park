@@ -3,12 +3,18 @@ $(document).ready(function() {
     event.preventDefault();
     var inputHeight = parseInt($("#height").val());
 
+    $(".short").removeClass("highlight");
+    $(".tall").removeClass("highlight");
+    $(".all").removeClass("highlight");
+
     if (inputHeight < 36) {
       $(".rides").show();
-      $(".tall").hide();
+      $(".short").addClass("highlight");
+      $(".all").addClass("highlight");
     } else {
       $(".rides").show();
-      $(".short").hide();
+      $(".tall").addClass("highlight");
+      $(".all").addClass("highlight");
     }
 
     $(".height").text(inputHeight);
